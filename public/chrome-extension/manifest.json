@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Tracker - Distraction Blocker",
+  "version": "1.0.0",
+  "description": "Monitor and warn about distracting websites during focus sessions",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "notifications"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Focus Tracker"
+  }
+}
