@@ -1,5 +1,5 @@
 // src/api.js
-const API_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL || "https://focus-backend-za8y.onrender.com";
 
 // Helper function for API calls with timeout and better error handling
 async function apiCall(url, options = {}) {
@@ -73,7 +73,7 @@ async function apiCall(url, options = {}) {
     
     if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
       console.error('❌ Network error - cannot reach server');
-      throw new Error('Cannot connect to server. Please ensure the backend is running on http://localhost:5000');
+      throw new Error('Cannot connect to server. Please ensure the backend is running.');
     }
     
     console.error('❌ API call failed:', {
