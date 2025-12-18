@@ -9,7 +9,7 @@ export const SessionProvider = ({ children }) => {
   const [user, setUser] = useState(null); // {name,email,_id}
   const [loading, setLoading] = useState(false);
 
-  const API = import.meta.env.VITE_API_URL || "https://focus-backend-za8y.onrender.com";
+  const API = "http://localhost:5000";
 
   // token from localStorage
   const token = localStorage.getItem("token");
